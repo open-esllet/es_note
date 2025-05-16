@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="penColorSpinner">
+        <item>黑色</item>
+        <!--<item>蓝色</item>
+        <item>绿色</item>
+        <item>红色</item>-->
+        <item>白色</item>
+    </string-array>
+
+    <string-array name="toolPenTypes">
+        <item>钢笔</item>
+        <item>铅笔</item>
+        <item>毛笔</item>
+    </string-array>
+
+    <string-array name="toolPenColor">
+        <item>黑</item>
+        <item>红</item>
+        <item>绿</item>
+        <item>蓝</item>
+        <item>黄</item>
+        <item>粉</item>
+        <item>靛</item>
+        <item>紫</item>
+    </string-array>
+
+    <string-array name="toolEraserTypes">
+        <item>轨迹擦除</item>
+        <item>范围擦除</item>
+        <item>擦除全部</item>
+    </string-array>
+    
+    <string-array name="toolShapeTypes">
+        <item>直线</item>
+        <item>圆形</item>
+        <item>矩形</item>
+        <item>三角形</item>
+    </string-array>
+</resources>

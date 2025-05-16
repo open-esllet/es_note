@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/tv_pen_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tool_pen_type"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_pen_size"
+        app:layout_constraintEnd_toStartOf="@+id/pen_type_pen"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
+
+    <ToggleButton
+        android:id="@+id/pen_type_pen"
+        style="@style/MyToolBarToggleButton"
+        android:layout_marginStart="20dp"
+        android:textOff="@string/pen_type_pen"
+        android:textOn="@string/pen_type_pen"
+        app:layout_constraintBottom_toBottomOf="@id/tv_pen_type"
+        app:layout_constraintEnd_toStartOf="@+id/pen_type_pencil"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_pen_type"
+        app:layout_constraintTop_toTopOf="@id/tv_pen_type" />
+
+    <ToggleButton
+        android:id="@+id/pen_type_pencil"
+        style="@style/MyToolBarToggleButton"
+        android:textOff="@string/pen_type_pencil"
+        android:textOn="@string/pen_type_pencil"
+        app:layout_constraintBottom_toBottomOf="@id/tv_pen_type"
+        app:layout_constraintEnd_toStartOf="@+id/pen_type_brush"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/pen_type_pen"
+        app:layout_constraintTop_toTopOf="@id/tv_pen_type" />
+
+    <ToggleButton
+        android:id="@+id/pen_type_brush"
+        style="@style/MyToolBarToggleButton"
+        android:textOff="@string/pen_type_brush"
+        android:textOn="@string/pen_type_brush"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/tv_pen_type"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/pen_type_pencil"
+        app:layout_constraintTop_toTopOf="@id/tv_pen_type" />
+
+    <TextView
+        android:id="@+id/tv_pen_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tool_pen_size"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/tv_pen_type"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pen_type" />
+
+    <SeekBar
+        android:id="@+id/sb_pen_width_level"
+        style="@style/MySeekBar"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:max="5"
+        android:progress="3"
+        app:layout_constraintBottom_toBottomOf="@id/tv_pen_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_pen_size"
+        app:layout_constraintTop_toTopOf="@id/tv_pen_size" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
