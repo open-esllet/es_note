@@ -29,23 +29,11 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  */
+#ifndef CONFIG_H
+#define CONFIG_H
 
-package com.es.note.repo
+#define CONF_EPD_DRIVER
+#define CONF_ACTION_BAR_HEIGHT 148
+#define CONF_238_WITH_KASA
 
-import com.es.note.room.entity.Folder
-import com.es.note.room.entity.Note
-import kotlinx.coroutines.flow.Flow
-
-interface NoteRepo {
-    fun getAllFoldersStream(): Flow<List<Folder>>
-    fun getFolderStream(id: Long): Flow<Folder?>
-    suspend fun insertFolder(item: Folder)
-    suspend fun deleteFolder(item: Folder)
-    suspend fun updateFolder(item: Folder)
-
-    fun getNoteStream(id: Long): Flow<Note?>
-    suspend fun getNote(id:Long): Note?
-    suspend fun insertNote(item: Note): Long
-    suspend fun deleteNote(item: Note)
-    suspend fun updateNote(item: Note)
-}
+#endif

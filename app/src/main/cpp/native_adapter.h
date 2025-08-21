@@ -29,23 +29,15 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  */
+#ifndef NATIVE_ADAPTER_H
+#define NATIVE_ADAPTER_H
 
-package com.es.note.repo
+#define TOUCH_DOWN 1
+#define TOUCH_MOVE 2
+#define TOUCH_UP   3
+#define RUBBER_DOWN 4
+#define RUBBER_UP 5
 
-import com.es.note.room.entity.Folder
-import com.es.note.room.entity.Note
-import kotlinx.coroutines.flow.Flow
+void reportEvent(int eventType, int x, int y, int pressure);
 
-interface NoteRepo {
-    fun getAllFoldersStream(): Flow<List<Folder>>
-    fun getFolderStream(id: Long): Flow<Folder?>
-    suspend fun insertFolder(item: Folder)
-    suspend fun deleteFolder(item: Folder)
-    suspend fun updateFolder(item: Folder)
-
-    fun getNoteStream(id: Long): Flow<Note?>
-    suspend fun getNote(id:Long): Note?
-    suspend fun insertNote(item: Note): Long
-    suspend fun deleteNote(item: Note)
-    suspend fun updateNote(item: Note)
-}
+#endif

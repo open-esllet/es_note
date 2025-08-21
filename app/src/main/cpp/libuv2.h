@@ -1,7 +1,7 @@
 /*
  * BSD 3-Clause License
  *
- * Copyright (c) 2025, pat733
+ * Copyright (c) 2025, Hancunchou@OED
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -30,22 +30,29 @@
  *
  */
 
-package com.es.note.repo
+#ifndef LIBUV32_H
+#define LIBUV32_H
+#include <stdio.h>
+#include <stdlib.h>
 
-import com.es.note.room.entity.Folder
-import com.es.note.room.entity.Note
-import kotlinx.coroutines.flow.Flow
 
-interface NoteRepo {
-    fun getAllFoldersStream(): Flow<List<Folder>>
-    fun getFolderStream(id: Long): Flow<Folder?>
-    suspend fun insertFolder(item: Folder)
-    suspend fun deleteFolder(item: Folder)
-    suspend fun updateFolder(item: Folder)
+#if defined(__cplusplus)
+extern "C" {
+#endif
 
-    fun getNoteStream(id: Long): Flow<Note?>
-    suspend fun getNote(id:Long): Note?
-    suspend fun insertNote(item: Note): Long
-    suspend fun deleteNote(item: Note)
-    suspend fun updateNote(item: Note)
+struct UVHead{
+    uint8_t r;
+    uint8_t g;
+    uint8_t y;
+    uint8_t b;
+};
+
+
+int init_uv_head(void);
+int Rgba8888ToGrayColorWindow(char *dst_buf,char *src_buf,int rgba_buff_left,int rgba_buff_top,int rgba_buff_right,int rgba_buff_bottom,int buff_width);
+int Rgba8888ToGrayRgba8888Window(char *dst_buf,char *src_buf,int rgba_buff_left,int rgba_buff_top,int rgba_buff_right,int rgba_buff_bottom,int buff_width);
+
+#if defined(__cplusplus)
 }
+#endif
+#endif /* LIBUV_H */
