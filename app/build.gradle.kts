@@ -47,6 +47,11 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    externalNativeBuild {
+        ndkBuild {
+            path = file("src/main/cpp/Android.mk")
+        }
+    }
     buildFeatures {
         compose = true
 	    viewBinding = true
